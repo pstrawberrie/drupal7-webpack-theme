@@ -2,8 +2,8 @@
  * App Entry
  */
 
-import './public/scss/main.scss';
-import { consoleGreet } from './util/helpers';
+import './scss/main.scss';
+import { consoleGreet } from './js/util/helpers';
 
 document.addEventListener('DOMContentLoaded', function() {
   consoleGreet();
