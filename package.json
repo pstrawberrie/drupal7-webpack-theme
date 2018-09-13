@@ -11,13 +11,15 @@
     "IE 10"
   ],
   "scripts": {
-    "start": "webpack --watch --open --config webpack.dev.js --progress --colors",
+    "start": "webpack --watch --config webpack.dev.js --progress --colors",
     "build": "webpack --config webpack.prod.js --progress --colors"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.24.7",
+    "browser-sync-webpack-plugin": "^2.2.2",
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.11",

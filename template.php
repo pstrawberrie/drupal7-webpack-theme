@@ -34,17 +34,14 @@ function drupal7webpack_preprocess_maintenance_page(&$variables, $hook) {
  * @param string $hook
  *   The name of the template being rendered ("html" in this case.)
  */
-/* -- Delete this line if you want to use this function
 function drupal7webpack_preprocess_html(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
-
-  // The body tag's classes are controlled by the $classes_array variable. To
-  // remove a class from $classes_array, use array_diff().
-  $variables['classes_array'] = array_diff($variables['classes_array'],
-    array('class-to-remove')
-  );
+  // Front Page Title
+  if($variables['is_front'] || !drupal_get_title()) {
+    $variables['head_title'] = variable_get('site_name');
+  } else {
+    $variables['head_title'] = drupal_get_title() . ' | ' . variable_get('site_name');
+  }
 }
-// */
 
 /**
  * Override or insert variables into the page templates.
@@ -54,11 +51,9 @@ function drupal7webpack_preprocess_html(&$variables, $hook) {
  * @param string $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
-function drupal7webpack_preprocess_page(&$variables, $hook) {
-  $variables['sample_variable'] = t('Lorem ipsum.');
-}
-// */
+// function drupal7webpack_preprocess_page(&$variables, $hook) {
+//   $vars['head_title'] = $title . ' | ' . variable_get('site_name');
+// }
 
 /**
  * Override or insert variables into the region templates.
