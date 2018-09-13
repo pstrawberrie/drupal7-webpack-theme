@@ -2,7 +2,6 @@
  * Shared Webpack Config
  */
 const path = require('path');
-const webpack = require('webpack');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -10,11 +9,18 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
 
-  entry: './src/index.js',
+  entry: {
+    global: './src/js/global.js',
+    example: './src/js/example.js',
+  },
 
   output: {
-    filename: 'app.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
+  },
+
+  optimization: {
+    splitChunks: { chunks: 'all' }
   },
 
   module: {
@@ -51,7 +57,7 @@ module.exports = {
   // - define environment variables here from 'site' JSON
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'app.css',
+      filename: '[name].css',
       chunkFilename: '[id].css'
     }),
     new CleanWebpackPlugin(['dist']),

@@ -53,7 +53,7 @@ core        = 7.x
 ;stylesheets[all][] = node.css
 
 ; Then we add our own stylesheet.
-stylesheets[all][] = dist/app.css
+stylesheets[all][] = dist/global.css
 
 ; If you wish to use conditional stylesheets, you should install the
 ; conditional stylesheets module: https://drupal.org/project/conditional_styles
@@ -65,7 +65,7 @@ stylesheets[all][] = dist/app.css
 
 ; Optionally add some JavaScripts to your theme.
 
-scripts[] = dist/app.js
+scripts[] = dist/global.js
 
 
 
@@ -90,9 +90,9 @@ regions[highlighted]    = Highlighted
 regions[help]           = Help
 regions[content]        = Content
 regions[sidebar_first]  = First sidebar
-regions[sidebar_second] = Second sidebar
+;regions[sidebar_second] = Second sidebar
 regions[footer]         = Footer
-regions[bottom]         = Page bottom
+;regions[bottom]         = Page bottom
 
 ; The page_top and page_bottom regions are hidden, which means they will not
 ; show up on the blocks administration page. But they are required in order for
