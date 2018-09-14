@@ -1,4 +1,9 @@
 // Base
 @import './base/_base';
 
-// Global_base'
+// Templates
+@import './templates/navigation',
+        './templates/page';
+
+// Theme (import last)
+@import './theme/default';

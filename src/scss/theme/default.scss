@@ -1,0 +1,13 @@
+/**
+ * Default Theme
+ * - color declarations only
+ */
+
+// Color Declarations
+$colorDark: #222;
+$colorLight: #f0f0f0;
+
+body {
+  color: $colorDark;
+  background: $colorLight;
+}
